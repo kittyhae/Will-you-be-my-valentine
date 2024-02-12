@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500&display=swap" rel="stylesheet">
+        <script src="script.js"></script>
+    </head>
+
+    <body>
+        <div class="home-container">
+            <div class="images">
+                <img id="icon" src="assets/noemo.png" class="icon">
+                <p class="ques">Will you be my<br>Valentine?</p>
+            </div>
+    
+            <div class="under-ques">
+                <button class="button" onmouseout="changeImage('noemo.png')" onmouseover="changeImage('sad.png')" onclick="resizeYesButton()">No</button>
+                <button id="yesButton" class="button" onmouseout="changeImage('noemo.png')" onmouseover="changeImage('happy.png')" onclick="navigateToPage('bye.html')">Yes</button>
+            </div>
+        </div>
+    
+        
+    </body>
+
+    <script>
+        let scaleFactor = 1;
+
+        function changeImage(imageName) {
+            document.getElementById('icon').src = "assets/" + imageName;
+        }
+
+        function resizeYesButton() {
+            scaleFactor += 0.2;
+            document.getElementById('yesButton').style.transform = 'scale(' + scaleFactor + ')';
+        }
+    </script>
+</html>
